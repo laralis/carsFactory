@@ -8,26 +8,23 @@ const listCars = [
   new Hatch("Fiat Mobi", 100, 1230),
   new SUV("Toyota SW4", 100, 100, 1100),
 ];
-const a = new Sedan("Chevrolet Onix", 100, 120);
 
-function logVeiculos(array: Car[]) {
+function vehiclesLog(array: Car[]) {
   array.forEach((i) => console.log(i.toString()));
 }
 function abastecerVeiculo(array: Car[], quantidade: number) {
   array.forEach((i) => i.addGas(quantidade));
 }
 
-function totalVeiculos() {
+function vehiclesLength() {
   console.log(Car.getCount());
 }
-function logRastreavel(car: Sedan) {
+function tracebleLog(car: Sedan) {
   console.log(car.logGasAmount());
 }
-logVeiculos(listCars);
+vehiclesLog(listCars);
 abastecerVeiculo(listCars, 200);
 
-totalVeiculos();
-logVeiculos(listCars);
-logRastreavel(listCars[0] as Sedan)
-logRastreavel(a)
-
+vehiclesLength();
+vehiclesLog(listCars);
+tracebleLog(listCars[0] as Sedan)
